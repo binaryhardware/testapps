@@ -1,5 +1,5 @@
 /* 
-  hello.c - hello world app
+  main.c - factorial app
   created by @alimpk
 
   Copyright (C) 2019-2020 Binary Hardware Group.
@@ -10,21 +10,26 @@
 
 #include "stdio.h"
 
+long long factorial(int n){
+    if (n < 0) 
+        return -1;
+    else {
+        long long result = 1;
+        int i;
+        for (int i=2; i <= n; i++)
+            fact *= i;
+        return fact;
+    }
+}
+
 int main(int argc, char const *argv[]) {
         int n, i;
         unsigned long long fact = 1;
         printf("Enter an integer: \n");
         scanf("%d", &n);
 
-        // shows error if the user enters a negative integer
-        if (n < 0)
-                printf("Error! Factorial of a negative number doesn't exist.\n");
-        else {
-                for (i = 1; i <= n; ++i) {
-                fact *= i;
-        }
-                printf("Factorial of %d = %llu\n", n, fact);
-    }
+        fact = factorial(n); 
+        printf("Factorial of %d = %llu\n", n, fact);
 
     return 0;
 }
